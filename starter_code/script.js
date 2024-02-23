@@ -35,6 +35,11 @@ function searchHandler(e) {
 function showSuggestions(potentialFruit) {
 	suggestions.innerHTML = '';
 
+	if (searchStr === ''){
+		potentialFruit = [];
+		return;
+	}
+
 	for (let fruit of potentialFruit){
 		const li = document.createElement('li');
 		li.textContent = fruit;
